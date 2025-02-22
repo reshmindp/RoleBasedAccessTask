@@ -16,7 +16,7 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <!-- App js -->
         <script src="{{asset('assets/js/plugin.js')}}"></script>
 
@@ -86,10 +86,7 @@
                                         <div class="mt-3 d-grid">
                                             <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
                                         </div>
-
-                                        {{-- <div class="mt-4 text-center">
-                                            <a href="{{route('forgot-password')}}" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
-                                        </div> --}}
+                                        
                                     </form>
                                 </div>
             
@@ -98,7 +95,7 @@
                         <div class="mt-5 text-center">
                             
                             <div>
-                                <p>© <script>document.write(new Date().getFullYear())</script> Fee Management</p>
+                                <p>© <script>document.write(new Date().getFullYear())</script> Post Management</p>
                             </div>
                         </div>
 
@@ -117,7 +114,7 @@
         
         <!-- App js -->
         <script src="{{asset('assets/js/app.js')}}"></script>
-        <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         {!! Toastr::message() !!}
     </body>
 </html>

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +26,13 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('loginSubmit');
 });
 
-Route::middleware(['auth'])->prefix('admin')->group(function () 
+Route::middleware(['auth'])->prefix('app')->group(function () 
 {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
+
+    Route::resource('users', UsersController::class);
+    Route::resource('posts', PostController::class)->middleware('permission:view post|create post|edit post|delete post');
+    Route::resource('category', CategoryController::class);
 });
 
